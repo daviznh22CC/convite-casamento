@@ -206,6 +206,9 @@
         transition: none !important;
       }
       .gallery-item:hover img { transform: none; }
+      .grande-dia-photo:hover {
+        transform: none;
+      }
       .nav-toggle-bar {
         transition: none !important;
       }
@@ -298,124 +301,213 @@
     #historia .section-sub { color: #8b9db2; }
     #historia .historia-text { color: #5a6f86; }
 
-    /* ─── CERIMÔNIA ─── */
-    #cerimonia { background: var(--cream2); padding: 80px 20px; }
-    .cerimonia-inner {
-      max-width: 900px; margin: 0 auto;
-    }
-    .event-cards {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin-top: 0;
-    }
-    .event-card {
-      background: var(--white); border-radius: 8px;
-      padding: 36px 32px; text-align: center;
-      border: 1px solid rgba(201,169,110,0.2);
-      box-shadow: 0 4px 24px rgba(61,47,30,0.06);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-      width: 100%;
-      max-width: 420px;
-    }
-    .event-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(201, 169, 110, 0.5);
-      box-shadow: 0 14px 34px rgba(61,47,30,0.12);
-    }
-    .event-card .icon {
-      font-size: 2rem; margin-bottom: 16px;
-      width: 56px;
-      height: 56px;
-      margin-left: auto;
-      margin-right: auto;
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(145deg, rgba(139,167,199,0.15), rgba(201,169,110,0.2));
-      border: 1px solid rgba(201,169,110,0.35);
-    }
-    .event-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem; color: var(--blue-dark);
-      margin-bottom: 16px;
-    }
-    .event-card p {
-      font-size: 0.9rem; line-height: 1.8;
-      color: var(--brown-light);
-    }
-    .event-card .highlight {
-      font-size: 1.1rem; font-weight: 500;
-      color: var(--gold); display: block; margin-top: 4px;
-    }
-
-    /* ─── MAPA ─── */
-    .map-container {
-      margin-top: 48px; border-radius: 12px; overflow: hidden;
-      box-shadow: 0 8px 32px rgba(61,47,30,0.1);
-      border: 1px solid rgba(201,169,110,0.25);
-    }
-    .map-address {
-      text-align: center;
-      margin: 0 auto 18px;
-      max-width: 640px;
-      padding: 14px 18px;
-      border-radius: 8px;
-      border: 1px dashed rgba(201,169,110,0.45);
-      background: rgba(255,255,255,0.55);
-      color: var(--brown-light);
-      line-height: 1.7;
-    }
-    .map-container iframe {
-      width: 100%; height: 320px; border: 0; display: block;
-    }
-    .church-photo {
-      margin: 18px auto 0;
-      max-width: 760px;
-      border-radius: 12px;
+    /* ─── O GRANDE DIA (cerimônia + local unificados) ─── */
+    #cerimonia.grande-dia {
+      position: relative;
       overflow: hidden;
-      border: 1px solid rgba(201,169,110,0.25);
-      box-shadow: 0 8px 26px rgba(61,47,30,0.1);
-      background: rgba(255,255,255,0.7);
+      margin-top: 24px;
+      padding: 76px 20px 88px;
+      border-radius: 18px;
+      border: 1px solid rgba(106, 138, 170, 0.14);
+      box-shadow:
+        0 4px 24px rgba(61, 47, 30, 0.05),
+        0 18px 48px rgba(106, 138, 170, 0.12);
+      background:
+        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(255, 255, 255, 0.65), transparent),
+        linear-gradient(165deg, #eef4fb 0%, #e4ecf6 38%, #ebe6dc 100%);
     }
-    .church-photo img {
+    #cerimonia.grande-dia::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(200px, 40vw);
+      height: 4px;
+      border-radius: 0 0 4px 4px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), var(--gold), var(--gold-light), transparent);
+      opacity: 0.95;
+    }
+    #cerimonia .section-title {
+      color: #4d6782;
+      letter-spacing: 0.02em;
+    }
+    #cerimonia .section-sub {
+      color: #7a92ad;
+    }
+    .grande-dia-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .grande-dia-venue {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.28rem, 2.8vw, 1.62rem);
+      font-weight: 400;
+      color: #5a6f86;
+      margin: 14px auto 0;
+      max-width: 540px;
+      line-height: 1.4;
+    }
+    .grande-dia-body {
+      margin-top: 42px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .grande-dia-photo {
+      margin: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(201, 169, 110, 0.38);
+      box-shadow:
+        0 2px 8px rgba(61, 47, 30, 0.06),
+        0 22px 44px rgba(106, 138, 170, 0.18);
+      position: relative;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .grande-dia-photo:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 8px 20px rgba(61, 47, 30, 0.08),
+        0 28px 52px rgba(106, 138, 170, 0.22);
+    }
+    .grande-dia-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+      pointer-events: none;
+    }
+    .grande-dia-photo img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
       display: block;
     }
-    .map-btn {
-      display: block; text-align: center; margin-top: 16px;
-      text-decoration: none; font-size: 0.8rem;
-      letter-spacing: 2px; text-transform: uppercase;
-      color: var(--blue-dark); background: var(--white);
-      border: 1px solid var(--blue);
-      padding: 14px 32px; border-radius: 4px;
-      width: fit-content; margin: 16px auto 0;
-      transition: all 0.3s;
+    .grande-dia-details {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      justify-content: center;
     }
-    .map-btn:hover { background: var(--blue); color: white; }
-    #local {
-      background: linear-gradient(180deg, #e9f1f9 0%, #e3edf7 100%);
+    .grande-dia-panel {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(106, 138, 170, 0.2);
       border-radius: 14px;
-      border: 1px solid rgba(106,138,170,0.14);
-      box-shadow: 0 10px 30px rgba(61,47,30,0.06);
-      margin-top: 24px;
+      padding: 22px 24px 24px;
+      box-shadow: 0 8px 28px rgba(61, 47, 30, 0.06);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
     }
-    #local .section-title { color: #5f7896; }
-    #local .section-sub { color: #8b9db2; }
-    #local .map-address {
-      background: rgba(255,255,255,0.72);
-      border-color: rgba(106,138,170,0.3);
+    .grande-dia-panel:hover {
+      border-color: rgba(201, 169, 110, 0.45);
+      box-shadow: 0 12px 32px rgba(61, 47, 30, 0.08);
+    }
+    .grande-dia-panel-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.68rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #8b9db2;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .grande-dia-panel-label .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0.85;
+    }
+    .grande-dia-when-main {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.35rem, 2.4vw, 1.65rem);
+      line-height: 1.35;
+      color: #4d6782;
+      font-weight: 400;
+    }
+    .grande-dia-when-main .grande-dia-hour {
+      display: block;
+      margin-top: 8px;
+      font-size: 1.15em;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .grande-dia-address-block address {
+      font-style: normal;
+      font-size: 1.02rem;
+      line-height: 1.8;
       color: #5a6f86;
     }
-    #local .map-btn {
-      color: #5f7896;
-      border-color: #9ab2ca;
-      background: rgba(255,255,255,0.9);
+    .grande-dia-map-wrap {
+      margin-top: 40px;
     }
-    #local .map-btn:hover {
-      background: #9ab2ca;
+    .grande-dia-map-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      color: rgba(106, 138, 170, 0.45);
+      font-size: 0.72rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+    .grande-dia-map-ornament::before,
+    .grande-dia-map-ornament::after {
+      content: '';
+      flex: 1;
+      max-width: 120px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.55), transparent);
+    }
+    #cerimonia .map-container {
+      margin-top: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(106, 138, 170, 0.22);
+      box-shadow:
+        0 4px 16px rgba(61, 47, 30, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+    #cerimonia .map-container iframe {
+      width: 100%;
+      height: min(340px, 52vw);
+      min-height: 240px;
+      border: 0;
+      display: block;
+    }
+    #cerimonia .map-btn {
+      display: block;
+      text-align: center;
+      margin-top: 18px;
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      color: #4d6782;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid #9ab2ca;
+      padding: 15px 36px;
+      border-radius: 999px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      transition: background 0.28s ease, color 0.28s ease, border-color 0.28s ease, transform 0.2s ease;
+    }
+    #cerimonia .map-btn:hover {
+      background: linear-gradient(135deg, #8ba7c7, #6a8aaa);
       color: #fff;
+      border-color: transparent;
+      transform: translateY(-1px);
     }
 
     /* ─── GALERIA ─── */
@@ -714,7 +806,17 @@
       .site-nav .nav-menu a::after { display: none; }
       .rsvp-box { padding: 28px 20px; }
       .radio-group { flex-direction: column; }
-      .map-address { font-size: 0.95rem; }
+      .grande-dia-body {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+      .grande-dia-photo img {
+        min-height: 200px;
+      }
+      #cerimonia .map-container iframe {
+        height: 260px;
+        min-height: 220px;
+      }
       .countdown-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .gallery-grid { grid-template-columns: 1fr; }
       .testemunho-grid { grid-template-columns: 1fr; }
@@ -741,8 +843,7 @@
     <li><a href="#testemunho">Testemunho</a></li>
     <li><a href="#historia">Nossa História</a></li>
     <li><a href="#countdown">Contagem</a></li>
-    <li><a href="#cerimonia">Cerimônia</a></li>
-    <li><a href="#local">Local</a></li>
+    <li><a href="#cerimonia">O Grande Dia</a></li>
     <li><a href="#confirmacao">Confirmar</a></li>
     <li><a href="#galeria">Galeria</a></li>
   </ul>
@@ -811,49 +912,55 @@
   </p>
 </section>
 
-<!-- CERIMÔNIA -->
-<div id="cerimonia" class="reveal">
-  <div class="cerimonia-inner">
+<!-- O GRANDE DIA — cerimônia e local -->
+<section id="cerimonia" class="reveal grande-dia">
+  <div class="grande-dia-inner">
     <div class="section-title">O Grande Dia</div>
     <div class="section-sub">Junte-se a nós</div>
-    <div class="event-cards">
-      <div class="event-card">
-        <div class="icon">💍</div>
-        <h3>Cerimônia</h3>
-        <p>
-          Igreja Bíblica Batista do Planalto<br>
-          Av. Dr. José Martins Rodrigues, 155<br>
-          Edson Queiroz, Fortaleza — CE<br>
-          <span class="highlight">26 de Junho de 2026 · 18h30</span>
-        </p>
+    <p class="grande-dia-venue">Igreja Bíblica Batista do Planalto</p>
+
+    <div class="grande-dia-body">
+      <figure class="grande-dia-photo">
+        <img src="images/igreja-batista-planalto.jpg" alt="Fachada da Igreja Bíblica Batista do Planalto, local da cerimônia">
+      </figure>
+      <div class="grande-dia-details">
+        <div class="grande-dia-panel">
+          <div class="grande-dia-panel-label"><span class="dot" aria-hidden="true"></span> Data e horário</div>
+          <div class="grande-dia-when-main">
+            <time datetime="2026-06-26T18:30:00-03:00">26 de Junho de 2026</time>
+            <span class="grande-dia-hour">18h30</span>
+          </div>
+        </div>
+        <div class="grande-dia-panel grande-dia-address-block">
+          <div class="grande-dia-panel-label"><span class="dot" aria-hidden="true"></span> Endereço</div>
+          <address>
+            Av. Dr. José Martins Rodrigues, 155<br>
+            Edson Queiroz, Fortaleza — CE
+          </address>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- LOCAL -->
-<section id="local" class="reveal">
-  <div class="section-title">Como Chegar</div>
-  <div class="section-sub">Igreja Bíblica Batista do Planalto</div>
-  <p class="map-address">
-    Av. Dr. José Martins Rodrigues, 155<br>
-    Edson Queiroz, Fortaleza - CE
-  </p>
-  <div class="map-container">
-    <iframe
-      src="https://www.google.com/maps?q=Av.+Dr.+Jose+Martins+Rodrigues,+155+-+Edson+Queiroz,+Fortaleza+-+CE&output=embed"
-      title="Mapa do local da cerimônia"
-      allowfullscreen="" loading="lazy">
-    </iframe>
+    <div class="grande-dia-map-wrap">
+      <div class="grande-dia-map-ornament" aria-hidden="true">Mapa</div>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps?q=Av.+Dr.+Jose+Martins+Rodrigues,+155+-+Edson+Queiroz,+Fortaleza+-+CE&output=embed"
+          title="Mapa do local da cerimônia"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+      </div>
+      <a
+        class="map-btn"
+        href="https://www.google.com/maps/search/?api=1&query=Av.+Dr.+Jose+Martins+Rodrigues,+155+-+Edson+Queiroz,+Fortaleza+-+CE"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        📍 Abrir no Google Maps
+      </a>
+    </div>
   </div>
-  <figure class="church-photo">
-    <img src="images/igreja-batista-planalto.jpg" alt="Igreja Bíblica Batista do Planalto">
-  </figure>
-  <a class="map-btn"
-     href="https://www.google.com/maps/search/?api=1&query=Av.+Dr.+Jose+Martins+Rodrigues,+155+-+Edson+Queiroz,+Fortaleza+-+CE"
-     target="_blank">
-    📍 Abrir no Google Maps
-  </a>
 </section>
 
 <!-- RSVP -->
