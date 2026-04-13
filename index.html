@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Davi & Clara — 26 de Junho de 2026</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -106,8 +106,24 @@
       margin: 20px auto;
     }
     .hero-text .tagline {
-      font-family: 'Cormorant Garamond', serif; font-style: italic;
-      font-size: 1.15rem; color: var(--brown-light);
+      font-family: 'Parisienne', cursive;
+      font-style: normal;
+      font-size: clamp(1.5rem, 3.4vw, 2rem);
+      line-height: 1.35;
+      color: #6a5a46;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.45);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .hero-text .tagline-ref {
+      display: block;
+      margin-top: 10px;
+      font-family: 'Jost', sans-serif;
+      font-style: normal;
+      font-size: 0.8rem;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #7b6a55;
     }
 
     @keyframes fadeUp {
@@ -343,6 +359,51 @@
     }
     .gallery-item:hover img { transform: scale(1.04); }
 
+    /* ─── TESTEMUNHO ─── */
+    #testemunho {
+      background: linear-gradient(180deg, #e9f1f9 0%, #e3edf7 100%);
+      border-radius: 14px;
+      border: 1px solid rgba(106,138,170,0.14);
+      box-shadow: 0 10px 30px rgba(61,47,30,0.06);
+      margin-top: 24px;
+    }
+    #testemunho .section-title { color: #5f7896; }
+    #testemunho .section-sub { color: #8b9db2; }
+    .testemunho-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .testemunho-card {
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid rgba(201,169,110,0.25);
+      box-shadow: 0 8px 24px rgba(61,47,30,0.08);
+      overflow: hidden;
+    }
+    .testemunho-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+    .testemunho-content {
+      padding: 22px;
+    }
+    .testemunho-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      color: var(--blue-dark);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .testemunho-content p {
+      color: var(--brown-light);
+      line-height: 1.8;
+      text-align: center;
+      font-size: 0.98rem;
+    }
+
     /* ─── RSVP ─── */
     #confirmacao { background: var(--cream); }
     .rsvp-box {
@@ -461,6 +522,7 @@
       .map-address { font-size: 0.95rem; }
       .countdown-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .gallery-grid { grid-template-columns: 1fr; }
+      .testemunho-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -473,8 +535,9 @@
     <li><a href="#countdown">Contagem</a></li>
     <li><a href="#cerimonia">Cerimônia</a></li>
     <li><a href="#local">Local</a></li>
-    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#testemunho">Testemunho</a></li>
     <li><a href="#confirmacao">Confirmar</a></li>
+    <li><a href="#galeria">Galeria</a></li>
   </ul>
 </nav>
 
@@ -485,7 +548,10 @@
     <div class="names">Davi<span> &amp; </span>Clara</div>
     <div class="divider"></div>
     <div class="date">26 de Junho de 2026</div>
-    <div class="tagline">Será uma honra celebrar este dia com você</div>
+    <div class="tagline">
+      "Este é o dia que o Senhor fez;<br>exultemos e alegremo-nos nele."
+      <span class="tagline-ref">Salmo 118:24</span>
+    </div>
   </div>
 </div>
 
@@ -561,26 +627,6 @@
   </a>
 </section>
 
-<!-- GALERIA -->
-<section id="galeria" class="reveal">
-  <div class="section-title">Mini Galeria</div>
-  <div class="section-sub">Alguns momentos nossos</div>
-  <div class="gallery-grid">
-    <figure class="gallery-item">
-      <img src="images/foto1.jpg" alt="Foto do casal 1">
-    </figure>
-    <figure class="gallery-item">
-      <img src="images/foto2.jpg" alt="Foto do casal 2">
-    </figure>
-    <figure class="gallery-item">
-      <img src="images/foto3.jpg" alt="Foto do casal 3">
-    </figure>
-    <figure class="gallery-item">
-      <img src="images/foto4.jpg" alt="Foto do casal 4">
-    </figure>
-  </div>
-</section>
-
 <!-- RSVP -->
 <section id="confirmacao" class="reveal">
   <div class="section-title">Confirmar Presença</div>
@@ -621,6 +667,48 @@
     <button type="button" class="btn-submit" id="btn-enviar" onclick="enviarConfirmacao()">
       Enviar
     </button>
+  </div>
+</section>
+
+<!-- TESTEMUNHO -->
+<section id="testemunho" class="reveal">
+  <div class="section-title">Testemunho</div>
+  <div class="section-sub">Davi Carvalho &amp; Clara Magalhães</div>
+  <div class="testemunho-grid">
+    <article class="testemunho-card">
+      <img src="images/davi-carvalho.jpg" alt="Davi Carvalho">
+      <div class="testemunho-content">
+        <h3>Davi Carvalho</h3>
+        <p>testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho</p>
+      </div>
+    </article>
+    <article class="testemunho-card">
+      <img src="images/clara-magalhaes.jpg" alt="Clara Magalhães">
+      <div class="testemunho-content">
+        <h3>Clara Magalhães</h3>
+        <p>testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria" class="reveal">
+  <div class="section-title">Mini Galeria</div>
+  <div class="section-sub">Alguns momentos nossos</div>
+  <div class="gallery-grid">
+    <figure class="gallery-item">
+      <img src="images/foto1.jpg" alt="Foto do casal 1">
+    </figure>
+    <figure class="gallery-item">
+      <img src="images/foto2.jpg" alt="Foto do casal 2">
+    </figure>
+    <figure class="gallery-item">
+      <img src="images/foto3.jpg" alt="Foto do casal 3">
+    </figure>
+    <figure class="gallery-item">
+      <img src="images/foto4.jpg" alt="Foto do casal 4">
+    </figure>
   </div>
 </section>
 
