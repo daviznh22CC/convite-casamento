@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <meta name="description" content="Convite do casamento de Davi Carvalho e Clara Magalhães — 26 de junho de 2026, Fortaleza (CE).">
   <meta name="theme-color" content="#e9f1f9">
   <meta property="og:type" content="website">
@@ -20,28 +18,6 @@
   <link rel="canonical" href="https://daviznh22cc.github.io/convite-casamento/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23e8d4a8'/%3E%3Cpath fill='%236a8aaa' d='M16 22s5.2-4.8 5.2-9.2c0-2.5-2.3-4.5-5.2-4.5s-5.2 2-5.2 4.5C10.8 17.2 16 22 16 22z'/%3E%3C/svg%3E">
   <title>Davi & Clara — 26 de Junho de 2026</title>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "Casamento de Davi Carvalho e Clara Magalhães",
-    "startDate": "2026-06-26T18:30:00-03:00",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "location": {
-      "@type": "Place",
-      "name": "Igreja Bíblica Batista do Planalto",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Av. Dr. José Martins Rodrigues, 155, Edson Queiroz",
-        "addressLocality": "Fortaleza",
-        "addressRegion": "CE",
-        "addressCountry": "BR"
-      }
-    },
-    "description": "Cerimônia de casamento — convite online de Davi e Clara."
-  }
-  </script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -56,7 +32,6 @@
       --brown: #3d2f1e;
       --brown-light: #7a5c3c;
       --white: #ffffff;
-      --nav-offset: 88px;
     }
 
     html { scroll-behavior: smooth; }
@@ -77,26 +52,6 @@
         var(--cream);
       color: var(--brown);
       overflow-x: hidden;
-    }
-
-    .skip-link {
-      position: absolute;
-      left: 12px;
-      top: -120px;
-      z-index: 300;
-      padding: 12px 20px;
-      background: var(--brown);
-      color: var(--cream);
-      text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 0.06em;
-      border-radius: 8px;
-      box-shadow: 0 4px 16px rgba(61, 47, 30, 0.25);
-    }
-    .skip-link:focus {
-      top: 12px;
-      outline: 2px solid var(--gold-light);
-      outline-offset: 3px;
     }
 
     /* ─── NAV ─── */
@@ -169,7 +124,6 @@
       padding: 120px 20px 60px;
       position: relative; overflow: hidden;
       background: radial-gradient(ellipse at 50% 30%, #f0e8d5 0%, var(--cream) 70%);
-      scroll-margin-top: var(--nav-offset);
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
@@ -193,7 +147,6 @@
       animation: fadeUp 1.4s ease both;
     }
     .hero-text .names {
-      margin: 0;
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(3rem, 8vw, 5.5rem);
       font-weight: 300; color: var(--blue-dark);
@@ -262,16 +215,12 @@
       .lightbox {
         transition: none !important;
       }
-      .whatsapp-cta:hover {
-        transform: none;
-      }
     }
 
     /* ─── SECTIONS ─── */
     section {
       padding: 80px 20px;
       max-width: 900px; margin: 0 auto;
-      scroll-margin-top: var(--nav-offset);
     }
     .reveal {
       opacity: 0;
@@ -534,7 +483,6 @@
       margin-top: 0;
       border-radius: 14px;
       overflow: hidden;
-      touch-action: manipulation;
       border: 1px solid rgba(201, 169, 110, 0.35);
       box-shadow:
         0 4px 16px rgba(61, 47, 30, 0.07),
@@ -630,16 +578,14 @@
       inset: 0;
       z-index: 220;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 56px 20px 24px;
+      padding: 56px 20px 20px;
       background: rgba(61, 47, 30, 0.88);
       backdrop-filter: blur(4px);
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.3s ease, visibility 0.3s ease;
-      gap: 14px;
     }
     .lightbox.is-open {
       opacity: 1;
@@ -647,24 +593,12 @@
     }
     .lightbox img {
       max-width: min(92vw, 1100px);
-      max-height: min(78vh, 820px);
+      max-height: 88vh;
       width: auto;
       height: auto;
       object-fit: contain;
       border-radius: 8px;
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
-    }
-    .lightbox-caption {
-      margin: 0;
-      padding: 0 16px;
-      max-width: 640px;
-      font-size: 0.95rem;
-      line-height: 1.45;
-      text-align: center;
-      color: rgba(248, 242, 232, 0.92);
-    }
-    .lightbox-caption:empty {
-      display: none;
     }
     .lightbox-close {
       position: absolute;
@@ -738,43 +672,17 @@
       color: var(--brown-light); text-align: center;
       margin-bottom: 32px; line-height: 1.7;
     }
-    .form-group { margin-bottom: 20px; }
-    .form-fieldset {
-      border: none;
-      margin: 0 0 20px;
-      padding: 0;
-    }
-    .form-fieldset legend {
+    .rsvp-note-ref {
       display: block;
-      font-size: 0.75rem;
+      margin-top: 10px;
+      font-family: 'Jost', sans-serif;
+      font-style: normal;
+      font-size: 0.72rem;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--brown-light);
-      margin-bottom: 8px;
-      padding: 0;
+      color: #9a8a78;
     }
-    .field-error {
-      display: none;
-      margin-top: 8px;
-      font-size: 0.82rem;
-      color: #9d0208;
-      line-height: 1.35;
-    }
-    .field-error.is-visible {
-      display: block;
-    }
-    input[aria-invalid="true"],
-    select[aria-invalid="true"] {
-      border-color: #c1121f;
-    }
-    .rsvp-privacy {
-      font-size: 0.8rem;
-      line-height: 1.55;
-      color: var(--brown-light);
-      text-align: center;
-      margin: 20px 0 8px;
-      opacity: 0.92;
-    }
+    .form-group { margin-bottom: 20px; }
     label {
       display: block; font-size: 0.75rem; letter-spacing: 2px;
       text-transform: uppercase; color: var(--brown-light);
@@ -824,9 +732,6 @@
     .btn-submit:disabled {
       opacity: 0.65; cursor: not-allowed;
     }
-    .btn-submit[aria-busy="true"] {
-      cursor: wait;
-    }
     .rsvp-status {
       font-family: 'Jost', sans-serif;
       font-size: 0.9rem;
@@ -837,125 +742,39 @@
     .rsvp-status.ok { color: #2d6a4f; }
     .rsvp-status.erro { color: #9d0208; }
 
-    /* ─── DETALHES (traje, presentes) ─── */
-    #detalhes {
-      background: var(--cream2);
-      border-radius: 14px;
-      border: 1px solid rgba(201, 169, 110, 0.22);
-      box-shadow: 0 8px 28px rgba(61, 47, 30, 0.05);
-      margin-top: 24px;
-    }
-    .detalhes-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    .detalhes-card {
-      background: rgba(255, 255, 255, 0.88);
-      border: 1px solid rgba(201, 169, 110, 0.25);
-      border-radius: 12px;
-      padding: 22px 22px 24px;
-      box-shadow: 0 6px 20px rgba(61, 47, 30, 0.05);
-    }
-    .detalhes-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
-      font-weight: 400;
-      color: var(--blue-dark);
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    .detalhes-card p {
-      font-size: 0.95rem;
-      line-height: 1.75;
-      color: var(--brown-light);
-      text-align: center;
-    }
-    .detalhes-card p strong {
-      color: var(--brown);
-      font-weight: 500;
-    }
-    .detalhes-pontualidade {
-      margin-top: 28px;
-      max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      font-weight: 300;
-      line-height: 1.75;
-      color: var(--brown-light);
-    }
-    .detalhes-pontualidade strong {
-      color: var(--brown);
-      font-weight: 500;
-    }
-
-    /* ─── DÚVIDAS / WHATSAPP (final da página) ─── */
-    #duvidas {
-      max-width: 560px;
-      margin: 0 auto;
-      padding: 64px 20px 48px;
-      text-align: center;
-    }
-    #duvidas .section-title {
-      font-size: clamp(1.85rem, 4vw, 2.35rem);
-      margin: 0 0 10px;
-    }
-    .duvidas-lead {
-      font-size: 1rem;
-      line-height: 1.75;
-      color: var(--brown-light);
-      margin-bottom: 24px;
-      max-width: 420px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .whatsapp-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 16px 28px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-size: 0.82rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: #fff;
-      background: #25d366;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 24px rgba(20, 72, 41, 0.28);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-    .whatsapp-cta:hover {
-      background: #20bd5a;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(20, 72, 41, 0.34);
-    }
-    .duvidas-hint {
-      margin-top: 18px;
-      font-size: 0.78rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #9a8a78;
-    }
-
     /* ─── FOOTER ─── */
     footer {
       background: var(--brown); color: rgba(248,242,232,0.6);
       text-align: center; padding: 40px 20px;
       font-size: 0.8rem; letter-spacing: 2px;
-      scroll-margin-top: var(--nav-offset);
     }
     footer .footer-names {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.8rem; color: var(--gold);
       margin-bottom: 8px;
+    }
+
+    /* ─── WHATSAPP FLUTUANTE ─── */
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      font-size: 1.6rem;
+      background: #25d366;
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(20, 72, 41, 0.35);
+      z-index: 150;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .whatsapp-float:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px rgba(20, 72, 41, 0.42);
     }
 
     /* ─── RESPONSIVE ─── */
@@ -1012,13 +831,10 @@
       .countdown-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .gallery-grid { grid-template-columns: 1fr; }
       .testemunho-grid { grid-template-columns: 1fr; }
-      .detalhes-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-
-<a class="skip-link" href="#conteudo">Ir ao conteúdo principal</a>
 
 <nav class="site-nav" id="site-nav">
   <div class="logo">Davi & Clara</div>
@@ -1035,24 +851,20 @@
     <span class="nav-toggle-bar" aria-hidden="true"></span>
   </button>
   <ul id="nav-menu" class="nav-menu">
-    <li><a href="#countdown">Contagem</a></li>
     <li><a href="#testemunho">Testemunho</a></li>
     <li><a href="#historia">Nossa História</a></li>
+    <li><a href="#countdown">Contagem</a></li>
     <li><a href="#cerimonia">O nosso dia</a></li>
-    <li><a href="#detalhes">Detalhes</a></li>
     <li><a href="#confirmacao">Confirmar</a></li>
     <li><a href="#galeria">Galeria</a></li>
-    <li><a href="#duvidas">Dúvidas</a></li>
   </ul>
 </nav>
-
-<main id="conteudo">
 
 <!-- HERO -->
 <div class="hero">
   <img class="hero-img" src="images/hero.jpg" alt="Davi e Clara" loading="eager" fetchpriority="high">
   <div class="hero-text">
-    <h1 class="names">Davi<span> &amp; </span>Clara</h1>
+    <div class="names">Davi<span> &amp; </span>Clara</div>
     <div class="divider"></div>
     <div class="date">26 de Junho de 2026</div>
     <div class="tagline">
@@ -1082,21 +894,17 @@
   <div class="section-sub">Davi Carvalho &amp; Clara Magalhães</div>
   <div class="testemunho-grid">
     <article class="testemunho-card">
-      <img src="images/davi-carvalho.jpg" alt="Davi Carvalho" width="800" height="600" loading="lazy">
+      <img src="images/davi-carvalho.jpg" alt="Davi Carvalho">
       <div class="testemunho-content">
         <h3>Davi Carvalho</h3>
-        <p>
-          Testemunho pessoal
-        </p>
+        <p>testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho</p>
       </div>
     </article>
     <article class="testemunho-card">
-      <img src="images/clara-magalhaes.jpg" alt="Clara Magalhães" width="800" height="600" loading="lazy">
+      <img src="images/clara-magalhaes.jpg" alt="Clara Magalhães">
       <div class="testemunho-content">
         <h3>Clara Magalhães</h3>
-        <p>
-          Testemunho pessoal
-        </p>
+        <p>testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho testemunho</p>
       </div>
     </article>
   </div>
@@ -1107,8 +915,11 @@
   <div class="section-title">Nossa História</div>
   <div class="section-sub">❦ Davi Carvalho &amp; Clara Magalhães</div>
   <p class="historia-text">
-    Aqui vai ter um texto que vamos escrever juntos falando sobre nós.<br><br>
-    Com muita alegria, convidamos você para se alegrar conosco.
+    Nossa história começou de forma simples, quase sem perceber. Entre conversas,
+    risadas e momentos inesperados, descobrimos que caminhar juntos tornava tudo
+    mais leve. O que era amizade se transformou em amor, e hoje celebramos a certeza
+    de que fomos feitos um para o outro.<br><br>
+    Com muita alegria, convidamos você para celebrar conosco este momento tão especial.
   </p>
 </section>
 
@@ -1121,7 +932,7 @@
 
     <div class="grande-dia-body">
       <figure class="grande-dia-photo">
-        <img src="images/igreja-batista-planalto.jpg" alt="Fachada da Igreja Bíblica Batista do Planalto, local da cerimônia" width="920" height="600" loading="lazy">
+        <img src="images/igreja-batista-planalto.jpg" alt="Fachada da Igreja Bíblica Batista do Planalto, local da cerimônia">
       </figure>
       <div class="grande-dia-details">
         <div class="grande-dia-panel">
@@ -1144,7 +955,12 @@
     <div class="grande-dia-map-wrap">
       <div class="grande-dia-map-ornament" aria-hidden="true">Mapa</div>
       <div class="map-container">
-        
+        <iframe
+          src="https://www.google.com/maps?q=Av.+Dr.+Jose+Martins+Rodrigues,+155+-+Edson+Queiroz,+Fortaleza+-+CE&output=embed"
+          title="Mapa do local da cerimônia"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
       </div>
       <a
         class="map-btn"
@@ -1164,17 +980,16 @@
   <div class="section-sub">Aguardamos sua resposta até 10 de Junho</div>
   <div class="rsvp-box">
     <p class="rsvp-note">
-      "Sua presença é o presente mais bonito que podemos receber."
+      "Alegrem-se com os que se alegram"
+      <span class="rsvp-note-ref">Romanos 12:15</span>
     </p>
-    <form id="form-rsvp" class="rsvp-form" novalidate>
     <div class="form-group">
       <label for="nome">Seu nome</label>
-      <input type="text" id="nome" name="nome" placeholder="Nome completo" autocomplete="name" aria-describedby="err-nome" aria-invalid="false">
-      <p id="err-nome" class="field-error" role="alert"></p>
+      <input type="text" id="nome" placeholder="Nome completo" required>
     </div>
-    <fieldset class="form-fieldset">
-      <legend id="legend-presenca">Você irá ao evento?</legend>
-      <div class="radio-group" role="radiogroup" aria-labelledby="legend-presenca">
+    <div class="form-group">
+      <label>Você irá ao evento?</label>
+      <div class="radio-group">
         <div class="radio-option">
           <input type="radio" id="sim" name="presenca" value="Sim, estarei presente! 🎉">
           <label for="sim">✓ Sim, irei!</label>
@@ -1184,11 +999,10 @@
           <label for="nao">✗ Não poderei ir</label>
         </div>
       </div>
-      <p id="err-presenca" class="field-error" role="alert"></p>
-    </fieldset>
+    </div>
     <div class="form-group" id="adultos-group">
       <label for="adultos">Número de adultos</label>
-      <select id="adultos" name="adultos" aria-describedby="err-adultos" aria-invalid="false">
+      <select id="adultos">
         <option value="">Selecione</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -1196,13 +1010,11 @@
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <p id="err-adultos" class="field-error" role="alert"></p>
     </div>
     <p id="rsvp-status" class="rsvp-status" aria-live="polite"></p>
-    <button type="submit" class="btn-submit" id="btn-enviar">
-      Enviar confirmação
+    <button type="button" class="btn-submit" id="btn-enviar" onclick="enviarConfirmacao()">
+      Enviar
     </button>
-    </form>
   </div>
 </section>
 
@@ -1213,50 +1025,30 @@
   <div class="gallery-grid">
     <figure class="gallery-item">
       <button type="button" class="gallery-thumb" aria-label="Ampliar foto 1">
-        <img src="images/foto1.jpg" alt="Esse dia foi a primeira vez em que falamos sobre casamento" width="800" height="600" loading="lazy">
+        <img src="images/foto1.jpg" alt="Esse dia foi a primeira vez em que falamos sobre casamento">
       </button>
       <figcaption>Esse dia foi a primeira vez em que falamos sobre casamento</figcaption>
     </figure>
     <figure class="gallery-item">
       <button type="button" class="gallery-thumb" aria-label="Ampliar foto 2">
-        <img src="images/foto2.jpg" alt="Ela nunca tinha ido na trilha do Cocó" width="800" height="600" loading="lazy">
+        <img src="images/foto2.jpg" alt="Ela nunca tinha ido na trilha do Cocó">
       </button>
       <figcaption>Ela nunca tinha ido na trilha do Cocó</figcaption>
     </figure>
     <figure class="gallery-item">
       <button type="button" class="gallery-thumb" aria-label="Ampliar foto 3">
-        <img src="images/foto3.jpg" alt="Alguém dormiu" width="800" height="600" loading="lazy">
+        <img src="images/foto3.jpg" alt="Alguém dormiu">
       </button>
       <figcaption>Alguém dormiu</figcaption>
     </figure>
     <figure class="gallery-item">
       <button type="button" class="gallery-thumb" aria-label="Ampliar foto 4">
-        <img src="images/foto4.jpg" alt="Tomamos café com a Tetê" width="800" height="600" loading="lazy">
+        <img src="images/foto4.jpg" alt="Tomamos café com a Tetê">
       </button>
       <figcaption>Tomamos café com a Tetê</figcaption>
     </figure>
   </div>
 </section>
-
-<section id="duvidas" class="reveal" aria-labelledby="titulo-duvidas">
-  <h2 class="section-title" id="titulo-duvidas">Dúvidas?</h2>
-  <p class="duvidas-lead">
-    Se quiser tirar alguma dúvida sobre o dia, o local, o traje ou a confirmação de presença,
-    fale com a gente pelo WhatsApp. Respondemos assim que possível.
-  </p>
-  <a
-    class="whatsapp-cta"
-    href="https://wa.me/5585998184396?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20casamento%20de%20Davi%20e%20Clara."
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <span aria-hidden="true">💬</span>
-    Conversar no WhatsApp
-  </a>
-  <p class="duvidas-hint">Somente para dúvidas — confirme presença pelo formulário acima</p>
-</section>
-
-</main>
 
 <footer>
   <div class="footer-names">Davi &amp; Clara</div>
@@ -1273,8 +1065,18 @@
 >
   <button type="button" class="lightbox-close" aria-label="Fechar">&times;</button>
   <img src="" alt="">
-  <p class="lightbox-caption" id="lightbox-caption"></p>
 </div>
+
+<a
+  class="whatsapp-float"
+  href="https://wa.me/5585998184396?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20casamento."
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Tirar dúvidas no WhatsApp"
+  title="Tirar dúvidas no WhatsApp"
+>
+  💬
+</a>
 
 <script>
   /**
@@ -1318,14 +1120,12 @@
   function initLightbox() {
     const lb = document.getElementById('lightbox');
     const lbImg = lb?.querySelector('img');
-    const lbCap = document.getElementById('lightbox-caption');
     const closeBtn = lb?.querySelector('.lightbox-close');
     if (!lb || !lbImg) return;
 
-    function openLb(src, alt, caption) {
+    function openLb(src, alt) {
       lbImg.src = src;
       lbImg.alt = alt || '';
-      if (lbCap) lbCap.textContent = caption || '';
       lightboxOpen = true;
       lb.classList.add('is-open');
       lb.setAttribute('aria-hidden', 'false');
@@ -1339,7 +1139,6 @@
       lb.setAttribute('aria-hidden', 'true');
       lbImg.removeAttribute('src');
       lbImg.alt = '';
-      if (lbCap) lbCap.textContent = '';
       atualizarScrollBody();
     }
 
@@ -1347,10 +1146,8 @@
       btn.addEventListener('click', () => {
         const img = btn.querySelector('img');
         if (!img) return;
-        const fig = btn.closest('figure');
-        const caption = fig?.querySelector('figcaption')?.textContent?.trim() || '';
         const src = img.currentSrc || img.getAttribute('src') || '';
-        openLb(src, img.alt || '', caption);
+        openLb(src, img.alt || '');
       });
     });
 
@@ -1361,61 +1158,6 @@
 
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && lb.classList.contains('is-open')) closeLb();
-    });
-  }
-
-  function clearRsvpFieldErrors() {
-    ['err-nome', 'err-presenca', 'err-adultos'].forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.textContent = '';
-        el.classList.remove('is-visible');
-      }
-    });
-    document.getElementById('nome')?.setAttribute('aria-invalid', 'false');
-    document.getElementById('adultos')?.setAttribute('aria-invalid', 'false');
-  }
-
-  function showFieldErr(inputId, errId, message) {
-    const err = document.getElementById(errId);
-    const input = document.getElementById(inputId);
-    if (err) {
-      err.textContent = message;
-      err.classList.add('is-visible');
-    }
-    if (input) input.setAttribute('aria-invalid', 'true');
-  }
-
-  function initRsvpForm() {
-    const form = document.getElementById('form-rsvp');
-    if (!form) return;
-
-    function syncAdultos() {
-      const nao = document.getElementById('nao');
-      const adultos = document.getElementById('adultos');
-      const errAd = document.getElementById('err-adultos');
-      if (!adultos) return;
-      if (nao?.checked) {
-        adultos.disabled = true;
-        adultos.value = '';
-        adultos.setAttribute('aria-invalid', 'false');
-        if (errAd) {
-          errAd.textContent = '';
-          errAd.classList.remove('is-visible');
-        }
-      } else {
-        adultos.disabled = false;
-      }
-    }
-
-    document.querySelectorAll('input[name="presenca"]').forEach((r) => {
-      r.addEventListener('change', syncAdultos);
-    });
-    syncAdultos();
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      enviarConfirmacao();
     });
   }
 
@@ -1469,40 +1211,19 @@
   async function enviarConfirmacao() {
     const statusEl = document.getElementById('rsvp-status');
     const btn = document.getElementById('btn-enviar');
-    const nomeEl = document.getElementById('nome');
-    const adultosEl = document.getElementById('adultos');
-    if (!statusEl || !btn) return;
+    const nome = document.getElementById('nome').value.trim();
+    const presencaEl = document.querySelector('input[name="presenca"]:checked');
+    const adultos = document.getElementById('adultos').value;
 
     statusEl.textContent = '';
     statusEl.className = 'rsvp-status';
-    clearRsvpFieldErrors();
 
-    const nome = nomeEl?.value.trim() ?? '';
-    const presencaEl = document.querySelector('input[name="presenca"]:checked');
-    const adultosVal = adultosEl?.disabled ? '' : (adultosEl?.value ?? '');
-
-    let valid = true;
     if (!nome) {
-      showFieldErr('nome', 'err-nome', 'Por favor, informe seu nome completo.');
-      valid = false;
+      alert('Por favor, informe seu nome.');
+      return;
     }
     if (!presencaEl) {
-      const err = document.getElementById('err-presenca');
-      if (err) {
-        err.textContent = 'Indique se você poderá comparecer ou não.';
-        err.classList.add('is-visible');
-      }
-      valid = false;
-    }
-    if (presencaEl?.id === 'sim' && !adultosVal) {
-      showFieldErr('adultos', 'err-adultos', 'Selecione quantos adultos virão ao evento.');
-      valid = false;
-    }
-
-    if (!valid) {
-      if (!nome) nomeEl?.focus();
-      else if (!presencaEl) document.getElementById('sim')?.focus();
-      else adultosEl?.focus();
+      alert('Por favor, indique se você irá ou não.');
       return;
     }
 
@@ -1513,10 +1234,9 @@
     }
 
     const presenca = presencaEl.value;
-    const adultosTexto = adultosVal || 'Não informado';
+    const adultosTexto = adultos || 'Não informado';
 
     btn.disabled = true;
-    btn.setAttribute('aria-busy', 'true');
     const textoOriginal = btn.textContent;
     btn.textContent = 'Enviando...';
 
@@ -1545,19 +1265,14 @@
       statusEl.textContent = 'Confirmação enviada com sucesso! Obrigado por responder.';
       statusEl.className = 'rsvp-status ok';
 
-      nomeEl.value = '';
+      document.getElementById('nome').value = '';
       document.querySelectorAll('input[name="presenca"]').forEach((el) => { el.checked = false; });
-      if (adultosEl) {
-        adultosEl.disabled = false;
-        adultosEl.value = '';
-      }
-      clearRsvpFieldErrors();
+      document.getElementById('adultos').value = '';
     } catch (e) {
       statusEl.textContent = e.message || 'Erro ao enviar. Verifique sua conexão e tente novamente.';
       statusEl.className = 'rsvp-status erro';
     } finally {
       btn.disabled = false;
-      btn.removeAttribute('aria-busy');
       btn.textContent = textoOriginal;
     }
   }
@@ -1566,7 +1281,6 @@
   ativarRevelacaoAoRolar();
   initNavMobile();
   initLightbox();
-  initRsvpForm();
 </script>
 
 </body>
