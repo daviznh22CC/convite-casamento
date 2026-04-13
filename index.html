@@ -426,12 +426,23 @@
       gap: 18px;
     }
     .gallery-item {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
       border-radius: 12px;
       overflow: hidden;
       border: 1px solid rgba(201,169,110,0.3);
       background: rgba(255,255,255,0.75);
       box-shadow: 0 8px 24px rgba(61,47,30,0.08);
-      aspect-ratio: 4 / 3;
+    }
+    .gallery-item figcaption {
+      padding: 12px 14px 14px;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      color: var(--brown-light);
+      text-align: center;
+      border-top: 1px solid rgba(201,169,110,0.2);
+      flex-shrink: 0;
     }
     .gallery-item img {
       width: 100%;
@@ -446,13 +457,14 @@
       padding: 0;
       margin: 0;
       width: 100%;
-      height: 100%;
-      min-height: 100%;
+      aspect-ratio: 4 / 3;
       display: block;
       cursor: zoom-in;
       background: none;
       font: inherit;
       -webkit-tap-highlight-color: transparent;
+      overflow: hidden;
+      flex-shrink: 0;
     }
     .gallery-thumb img {
       pointer-events: none;
@@ -894,23 +906,27 @@
   <div class="gallery-grid">
     <figure class="gallery-item">
       <button type="button" class="gallery-thumb" aria-label="Ampliar foto 1">
-        <img src="images/foto1.jpg" alt="Foto do casal 1">
+        <img src="images/foto1.jpg" alt="Esse dia foi a primeira vez em que falamos sobre casamento">
       </button>
+      <figcaption>Esse dia foi a primeira vez em que falamos sobre casamento</figcaption>
     </figure>
     <figure class="gallery-item">
       <button type="button" class="gallery-thumb" aria-label="Ampliar foto 2">
-        <img src="images/foto2.jpg" alt="Foto do casal 2">
+        <img src="images/foto2.jpg" alt="Ela nunca tinha ido na trilha do Cocó">
       </button>
+      <figcaption>Ela nunca tinha ido na trilha do Cocó</figcaption>
     </figure>
     <figure class="gallery-item">
       <button type="button" class="gallery-thumb" aria-label="Ampliar foto 3">
-        <img src="images/foto3.jpg" alt="Foto do casal 3">
+        <img src="images/foto3.jpg" alt="Alguém dormiu">
       </button>
+      <figcaption>Alguém dormiu</figcaption>
     </figure>
     <figure class="gallery-item">
       <button type="button" class="gallery-thumb" aria-label="Ampliar foto 4">
-        <img src="images/foto4.jpg" alt="Foto do casal 4">
+        <img src="images/foto4.jpg" alt="Tomamos café com a Tetê">
       </button>
+      <figcaption>Tomamos café com a Tetê</figcaption>
     </figure>
   </div>
 </section>
